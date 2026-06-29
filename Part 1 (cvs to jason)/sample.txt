@@ -1,0 +1,125 @@
+Title
+
+Predicting Payment Methods Using Supervised Machine Learning on the Amazon Sales & Trading Insights Dataset
+
+Abstract
+
+E-commerce platforms generate large volumes of transactional data every day, and understanding how customers choose to pay can provide useful insight for business operations, fraud monitoring, and payment optimization. This study investigates the prediction of customer payment methods using supervised machine learning techniques on the Amazon Sales & Trading Insights Dataset 2024. The dataset contains structured customer, product, order, pricing, and transaction records, and the target variable is the payment method used in each transaction.
+
+The study treats the task as a multiclass classification problem and compares several commonly used supervised learning algorithms, including Logistic Regression, Decision Tree, k-Nearest Neighbors, Support Vector Machine, Random Forest, and Gradient Boosting. Before training, the data is cleaned through duplicate removal, categorical encoding, feature scaling, and train-test splitting. Model performance is evaluated using accuracy, precision, recall, F1-score, balanced accuracy, and cross-validation accuracy.
+
+The overall aim of the work is not only to identify the most accurate model, but also to understand which approach offers a practical balance between performance, robustness, and interpretability for e-commerce analytics.
+
+Introduction
+
+Online retail systems create a rich record of customer activity, including order timing, location, product category, price, and payment choice. Among these variables, payment method is especially important because it reflects customer preference, transaction convenience, and sometimes risk-related behavior. For a platform such as Amazon, knowing which payment method is likely to be used can help improve user experience, support transaction planning, and guide fraud-related analysis.
+
+This project focuses on the Amazon Sales & Trading Insights Dataset 2024, which contains 10,000 rows and 21 columns of structured e-commerce data. The dataset includes customer, order, product, and pricing attributes, along with the target variable payment_method, which takes multiple classes such as Card, COD, NetBanking, and UPI.
+
+The central idea of this work is to examine whether transaction-level information is sufficient to predict the payment method used by a customer. To answer this, the study applies a supervised machine learning workflow and compares several classification models. The analysis is designed to be practical as well as comparative, so that the final model recommendation is based on both predictive quality and usability in a real business setting.
+
+Related Work / Background
+
+Supervised learning has been widely used in classification tasks where the target variable belongs to a finite set of categories. In e-commerce settings, classification models are often used for customer segmentation, churn prediction, fraud detection, recommendation systems, and transaction analysis. Payment-method prediction fits naturally into this broader category because it involves learning patterns from historical transaction records and assigning a category to new observations.
+
+From a methodological point of view, the models selected for this project cover a useful range of classification behavior. Logistic Regression gives a strong baseline for linear decision boundaries. Decision Trees capture non-linear rules and are easy to interpret. k-Nearest Neighbors relies on similarity between observations. Support Vector Machines can be effective in higher-dimensional feature spaces. Random Forest and Gradient Boosting represent ensemble methods, which are often stronger in tabular classification problems because they combine multiple learners and reduce instability. This model set is consistent with the comparison design described in the proposal.
+
+A further reason for including preprocessing comparison and cross-validation is that real-world tabular data rarely behaves ideally. Categorical variables, duplicated records, and uneven class distributions can affect results, so evaluating models under more than one metric gives a more realistic picture of performance. The proposal explicitly emphasizes robustness, interpretability, and practical trade-offs rather than accuracy alone.
+
+Dataset Description
+
+The study uses the Amazon Sales & Trading Insights Dataset 2024, sourced from Kaggle. It contains 10,000 rows and 21 columns, and is described as a structured tabular dataset from the e-commerce and sales analytics domain.
+
+The dataset includes fields such as order_id, order_date, ship_date, customer_id, customer_name, state, city, product_name, category, sub_category, brand, quantity, unit_price, discount, shipping_cost, total_sales, and payment_method. Among these, payment_method is the target variable used for prediction. The classes include Card, COD, NetBanking, and UPI.
+
+Because the dataset combines customer, product, order, and pricing information, it is suitable for studying how transaction attributes relate to payment behavior. Its tabular structure also makes it appropriate for standard machine learning methods such as tree-based models, margin-based classifiers, and distance-based classifiers.
+
+Problem Statement
+
+E-commerce platforms produce large amounts of customer and transaction data, but this information is only useful if it can be analyzed in a meaningful way. One practical question is whether the payment method used in a transaction can be predicted from other available attributes such as customer location, product type, order details, and pricing information.
+
+The problem addressed in this study is therefore to determine whether supervised learning models can classify payment methods effectively using the available transaction features. The study also examines how different models behave in terms of effectiveness, robustness, and interpretability, since a model that performs well in accuracy alone may not be the best choice in practice.
+
+Research Questions
+
+The study is organized around the following questions:
+
+How effectively can baseline supervised learning models predict payment methods?
+Which machine learning model performs best on the Amazon Sales & Trading Insights dataset?
+How does preprocessing affect predictive performance?
+Which features contribute most significantly to payment-method prediction?
+How sensitive are model performances to different evaluation metrics?
+How robust is the selected model under cross-validation?
+Which model offers the best balance between predictive performance, robustness, computational efficiency, and interpretability?
+Methodology
+
+The project follows a full supervised machine learning workflow. The dataset is first collected from Kaggle and imported into Python using pandas. After loading, the data is cleaned and prepared for modeling. The proposal states that preprocessing includes removal of duplicate records, removal of constant columns, missing-value handling, encoding of categorical variables, and scaling of numerical variables.
+
+Categorical features are transformed using one-hot encoding, while numerical variables are standardized using StandardScaler. The dataset is then split into training and testing sets using an 80/20 split, with stratified sampling to preserve the class distribution.
+
+After preprocessing, the study trains and compares six machine learning algorithms: Logistic Regression, Decision Tree Classifier, k-Nearest Neighbors, Support Vector Machine, Random Forest Classifier, and Gradient Boosting Classifier. Model evaluation is carried out using several classification metrics so that performance can be assessed from multiple angles rather than relying on a single measure.
+
+A final stage of the workflow involves cross-validation, feature importance analysis, and a comparative recommendation. This is important because the project is not only trying to find the best-performing model, but also the most practical one for deployment and interpretation.
+
+Experimental Setup
+
+The experimental design is based on the model comparison framework outlined in your proposal. The dataset is split into training and testing partitions, and the same preprocessing pipeline is applied consistently across models to keep the comparison fair.
+
+The evaluation metrics used in the study are:
+
+Accuracy
+Precision
+Recall
+F1-score
+Balanced Accuracy
+Cross-validation Accuracy
+
+These metrics are appropriate because payment-method prediction is a multiclass problem, and multiclass evaluation requires attention not only to overall correctness but also to class-wise balance. Cross-validation is included to reduce the chance that the observed result is only due to a favorable train-test split.
+
+Results and Discussion
+
+In the comparison framework, the baseline models provide an initial reference point for how well the task can be solved without more advanced modeling. Logistic Regression and Decision Tree offer useful starting points because they are relatively simple and easy to interpret. KNN and SVM can improve performance in some settings, but they can also be sensitive to preprocessing and feature scaling. Ensemble models such as Random Forest and Gradient Boosting are expected to perform strongly on structured tabular data because they are better at capturing non-linear relationships and feature interactions. This expectation matches the overall direction of your proposal, which is centered on comparing these classifiers for practical prediction.
+
+The discussion section in your final report should emphasize three ideas. First, whether the models are able to learn meaningful patterns from transaction data. Second, whether preprocessing improves or stabilizes performance. Third, whether the strongest model is also the most interpretable and practical choice. That balance matters because a slightly less accurate model may still be preferable if it is easier to explain and deploy.
+
+Since the uploaded proposal does not contain final numerical results, I have not invented any performance values here. When you insert the outputs from your notebooks, this section should discuss the actual best model, the metric values, and the model ranking in a direct way. The writing style should stay analytical, not exaggerated.
+
+Figures and Tables Generated from Your Code
+
+Your report is expected to include publication-style tables and figures that summarize the experimental analysis. The proposal specifically lists the following tables: baseline model performance, comparative model performance, preprocessing impact, feature importance ranking, metric sensitivity, cross-validation robustness, and final decision matrix. It also lists the matching figures, including bar charts, line graphs, feature importance visualization, metric comparison plot, robustness plot, and a radar chart for final recommendation.
+
+A clean way to present them in the report is:
+
+Tables
+
+Table 1: Baseline model performance
+Table 2: Comparative model performance
+Table 3: Effect of preprocessing
+Table 4: Feature importance ranking
+Table 5: Metric sensitivity analysis
+Table 6: Cross-validation robustness
+Table 7: Final decision matrix
+
+Figures
+
+Figure 1: Baseline performance bar chart
+Figure 2: Model comparison bar chart
+Figure 3: Preprocessing impact graph
+Figure 4: Feature importance plot
+Figure 5: Metric sensitivity plot
+Figure 6: Cross-validation robustness plot
+Figure 7: Final radar chart
+
+Your README also confirms that the notebook set is intended to generate research-question outputs and save figures as PDF files and tables as CSV files in an outputs/ folder.
+
+Conclusion
+
+This study examines whether payment methods in e-commerce transactions can be predicted using supervised machine learning. Using the Amazon Sales & Trading Insights Dataset 2024, the project frames the task as a multiclass classification problem and evaluates a range of supervised algorithms across several performance measures. The overall purpose is to identify not just the most accurate model, but the model that is most suitable for practical use in e-commerce analytics.
+
+The project is well structured for a master’s-level report because it includes preprocessing, model comparison, evaluation across multiple metrics, robustness checking, feature analysis, and final model selection. That makes the work stronger than a simple one-model exercise and gives it a proper research flow.
+
+References
+
+[1] Amazon Sales & Trading Insights Dataset 2024, Kaggle dataset page.
+[2] Project proposal PDF, uploaded file.
+[3] README.md for the Kaggle notebook workflow, uploaded file.
